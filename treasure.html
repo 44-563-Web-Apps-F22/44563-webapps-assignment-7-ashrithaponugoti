@@ -26,48 +26,74 @@
     </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="closedtreasure.png" height="80" width="80"> </div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct0" onclick="check(0)"><img src="closedtreasure.png" height="80" width="80"> </div>
+            <div id="ct1" onclick="check(1)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct2" onclick="check(2)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct3" onclick="check(3)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct4" onclick="check(4)"><img src="closedtreasure.png" height="80" width="80"></div>
         </div>
     </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="closedtreasure.png" height="80" width="80"> </div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct5" onclick="check(5)"><img src="closedtreasure.png" height="80" width="80"> </div>
+            <div id="ct6" onclick="check(6)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct7" onclick="check(7)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct8" onclick="check(8)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct9" onclick="check(9)"><img src="closedtreasure.png" height="80" width="80"></div>
         </div>
     </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="closedtreasure.png" height="80" width="80"> </div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="help.jpg" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct10" onclick="check(10)"><img src="closedtreasure.png" height="80" width="80"> </div>
+            <div id="ct11" onclick="check(11)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct12" onclick="help()"><img src="help.jpg" height="80" width="80"></div>
+            <div id="ct13" onclick="check(13)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct14" onclick="check(14)"><img src="closedtreasure.png" height="80" width="80"></div>
         </div>
     </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="closedtreasure.png" height="80" width="80"> </div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct15" onclick="check(15)"><img src="closedtreasure.png" height="80" width="80"> </div>
+            <div id="ct16" onclick="check(16)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct17" onclick="check(17)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct18" onclick="check(18)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct19" onclick="check(19)"><img src="closedtreasure.png" height="80" width="80"></div>
         </div>
     </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="closedtreasure.png" height="80" width="80"> </div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
-            <div><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct20" onclick="check(20)"><img src="closedtreasure.png" height="80" width="80"> </div>
+            <div id="ct21" onclick="check(21)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct22" onclick="check(22)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct23" onclick="check(23)"><img src="closedtreasure.png" height="80" width="80"></div>
+            <div id="ct24" onclick="check(24)"><img src="closedtreasure.png" height="80" width="80"></div>
         </div>
     </div>
+    <script>
+        var ids=[];
+        for(var i=0;i<=24;i++){
+                ids.push(i);
+            }
+        var chestCount=0;
+        var score=0;
+        var lastCheck=12;
+        var treasureLocation=18;
+        function check(position){
+            var imge="ct"+ids[position];
+            var img1=document.getElementById(imge);
+            if(position=="ct"+treasureLocation){
+                img1.src="treasure.jpg";
+            }
+            else{
+                img1.src="emptytreasure.jpg";
+            }
+            chestCount++;
+            document.getElementById("chests").innerHTML="Number of chests checked is"+chestCount;
+            score++;
+            document.getElementById("score").innerHTML="Score is "+score;
+            lastCheck=position;
+        }
+    </script>
 </body>
+
 </html>
