@@ -24,9 +24,6 @@
     <div id="help" style="background-color:aliceblue">
         Help report.
     </div>
-    <div id="lc" style="background-color:aliceblue">
-        Last check
-    </div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
             <div> <img src="closedtreasure.png" height="80" width="80" id="0" onclick="check(0)"> </div>
@@ -97,7 +94,6 @@
         score++;
         document.getElementById("score").innerHTML="Score is "+score;
         lastCheck=position;
-        document.getElementById("lc").innerHTML="Last checked element is "+lastCheck;
     }
     function help(){
         var row=parseInt(lastCheck/5);
