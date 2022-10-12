@@ -37,8 +37,6 @@
 		<button onclick="makeNewDiv()">Add value</button>
         <button onclick="get()">Get</button>
         <button onclick="spin()">Spin</button>
-	
-	
 </body>
 <script>
 	function makeNewDiv(){
@@ -53,7 +51,6 @@
 		container.appendChild(element)
 		
 	}
-
     function get(){
         var cyclerItems=document.getElementsByClassName("cycler");
         len=cyclerItems.length;
@@ -61,7 +58,6 @@
             cyclerItems[len-1].remove();
         }
     }
-
     function spin(){
         var cyclerItems=document.getElementsByClassName("cycler");
         if(!(cyclerItems.length==0||cyclerItems.length==1)){
