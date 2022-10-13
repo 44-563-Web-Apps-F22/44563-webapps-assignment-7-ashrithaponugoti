@@ -37,6 +37,7 @@
 		<button onclick="makeNewDiv()">Add value</button>
         <button onclick="get()">Get</button>
         <button onclick="spin()">Spin</button>
+        <button onclick="swap()">Swap</button>
 </body>
 <script>
 	function makeNewDiv(){
@@ -65,6 +66,36 @@
            cyclerItems[cyclerItems.length-1].remove();
             let container = document.getElementById('target')
             container.insertBefore(removedItem, container.firstChild);
+        }
+    }
+
+    function swap(){
+        var cyclerItems=document.getElementsByClassName("cycler")
+        var item1=Math.floor(Math.random()*(cyclerItems.length-1))
+        var item2=Math.floor(Math.random()*(cyclerItems.length-1))
+        if(item1==item2){
+            item2+=1
+        }
+        if(cyclerItems.length==2){
+            swapItem=document.createElement("div")
+            swapItem.innerHTML=cyclerItems[1].textContent
+            swapItem.className="cycler"
+            cyclerItems[1].remove()
+            var container=document.getElementById("target")
+            container.insertBefore(swapElement,container.firstChild)
+        }
+        else if(cyclerItems.length>2){
+            s1=document.createElement("div")
+            s1.innerHTML=cyclerItems[item1].textContent
+            s1.className="cycler"
+            s2=document.createElement("div")
+            s2.innerHTML=cyclerItems[item2].textContent
+            s2.className="cycler"
+            cyclerItems[item1].remove()
+            var container=document.getElementById("target")
+            container.insertBefore(s1,cyclerItems[item2-1])
+            cyclerItems[item2].remove()
+            container.insertBefore(s2,cyclerItems[item1])
         }
     }
 </script>

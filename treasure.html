@@ -24,6 +24,7 @@
     <div id="help" style="background-color:aliceblue">
         Help report.
     </div>
+    <div><button class="btn btn-success" onclick="NewGame()">NEW GAME</button></div>
     <div class="container">
         <div class="image-row d-flex justify-content-center">
             <div> <img src="closedtreasure.png" height="80" width="80" id="0" onclick="check(0)"> </div>
@@ -134,5 +135,20 @@
         }
 
     }
+    
+    function NewGame(){
+        treasureLocation=Math.floor(Math.random() * (24));
+        chestno=0;
+        score=0;
+        document.getElementById("chests").innerHTML="Number of chests checked is "+chestno+".";
+        document.getElementById("score").innerHTML="Score is "+score+".";
+        if(treasureLocation==12){
+            treasureLocation=12+Math.floor(Math.random()*12)
+        }
+        for (var i = 0; i <= 24; i++) {
+            if(i != 12)
+            document.getElementById(ids[i]).src = "closedtreasure.png"
+        }
+        }
 </script>
 </html>

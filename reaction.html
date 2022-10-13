@@ -21,17 +21,18 @@
   
   
   <script> 
-  var myTime;
+  let myTime=undefined;
   function recordReact() {
     myTime=Date.now();
     console.log(myTime);
   }
 
   function startTime() {
-    for(let i=0;i<4;i++){
+    let countDown=Math.floor(Math.random() * (15 - 5)) + 5;
+    for(let i=0;i<=countDown;i++){
         setTimeout(()=>{
       document.getElementById('countdown').innerHTML = i
-    }, (3-i)*1000)
+    }, (countDown-i)*1000)
     setTimeout(function(){
       if(myTime==undefined){
         document.getElementById('target').innerHTML= "Too Slow";
@@ -41,7 +42,7 @@
         diff=buttonTime-myTime;
         document.getElementById('target').innerHTML= "Time was "+diff;
       }
-    }, 3000)
+    }, countDown*1000)
     }
     
   }
